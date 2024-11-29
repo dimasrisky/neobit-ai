@@ -11,9 +11,9 @@ export default {
         'lexend': ['Lexend', 'sans-serif']
       },
       colors: {
-        'primary-white': '#AFADAD',
-        'primary-black': '#1E1F20',
-        'secondary-black': '#282A2C',
+        'primary-white': '#D0D2E3',
+        'primary-black': '#0B0C11',
+        'secondary-black': '#161820',
         'primary-blue': '#244DCB'
       },
       animation: {
