@@ -18,14 +18,17 @@ const ExamplePrompt: React.FC<ExampleProps> = ({ text }) => {
 
     setIsLoading(true)
     try {
-      const result = await inference.chatCompletion({
+      let out: string = ''
+      const result = inference.chatCompletionStream({
         model: import.meta.env.VITE_HF_MODEL,
         messages: [...chats, { role: 'user', content: message }],
-        max_tokens: 500
+        max_tokens: 2000
       })
-      if(result.choices[0]?.message){
-        setChats((prev: any) => [...prev, result.choices[0]?.message])
+      for await (const chunk of result){
+        console.log(chunk.choices[0].delta.content)
+        out += chunk.choices[0].delta.content
       }
+      setChats((prev: any) => [...prev, { role: 'assistant', content: out }])
       setIsLoading(false)
     }catch(error){
       setChats((prev: any) => [...prev, { role: 'user', content: error }])
