@@ -22,14 +22,17 @@ const Conversation: React.FC = () => {
 
     setIsLoading(true)
     try {
-      const result = await inference.chatCompletion({
+      let out: string = ''
+      const result: any = inference.chatCompletionStream({
         model: import.meta.env.VITE_HF_MODEL,
         messages: [...chats, { role: 'user', content: message }],
-        max_tokens: 500
+        max_tokens: 2000,
+        temperature: 0.1
       })
-      if(result.choices[0]?.message){
-        setChats((prev: any) => [...prev, result.choices[0]?.message])
+      for await (const chunk of result){
+        out += chunk.choices[0].delta.content
       }
+      setChats((prev: any) => [...prev, { role: 'assistant', content: out }])
       setIsLoading(false)
     }catch(error){
       setChats((prev: any) => [...prev, { role: 'user', content: error }])
@@ -38,7 +41,6 @@ const Conversation: React.FC = () => {
     }
   }
 
-  console.log(chats)
   return (
     <>
       <section id="conversation-page" className="relative min-w-screen min-h-screen bg-primary-black">
@@ -55,9 +57,11 @@ const Conversation: React.FC = () => {
 
           {/* Input Form */}
             <form action="" className="w-full" onSubmit={submitMessage}>
-              <div className="flex px-[22px] mx-auto py-[15px] items-center justify-between w-full text-[12px] text-white bg-secondary-black rounded-full shadow-sm outline-none lg:text-[16px] lg:px-[28px]">
-                <input type="text" name="inputMessage" placeholder="Ketik sesuatu..." className="outline-none w-[85%] bg-secondary-black h-[100%]"/>
-                <button type="submit"><Send style="w-[20px] lg:w-[30px]"/></button>
+              <div className="flex px-[22px] mx-auto py-[12px] items-center justify-between w-full text-[12px] text-white bg-secondary-black rounded-full shadow-sm outline-none lg:text-[16px] lg:px-[28px]">
+                <input type="text" name="inputMessage" autoFocus placeholder="Ketik sesuatu..." className="outline-none w-[85%] bg-secondary-black h-[100%]"/>
+                <div className="flex items-center gap-[12px]">
+                  <button type="submit"><Send style="w-[20px] lg:w-[30px]"/></button>
+                </div>
               </div>
             </form>
           </main>
