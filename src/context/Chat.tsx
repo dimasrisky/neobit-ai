@@ -18,7 +18,7 @@ type ChatProviderProps = {
 const ChatContext = createContext<ChatContextType>({ chats: [], setChats: () => {}, isLoading: false, setIsLoading: () => {} })
 
 const ChatProvider: React.FC<ChatProviderProps> = ({ children }) => {
-  const [ chats, setChats ] = useState<Chat[]>([])
+  const [ chats, setChats ] = useState<Chat[]>([{ role: 'user', content: 'Mulai Hari ini namamu adalah Neobot, Model Asisten Virtual yang dibuat oleh Dimas, Jawab dengan memperkenalkan dirimu'}])
   const [ isLoading, setIsLoading ] = useState<boolean>(false)
 
   return(

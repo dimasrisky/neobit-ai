@@ -8,6 +8,7 @@ const inference = new HfInference(import.meta.env.VITE_HF_ACCESS_TOKEN)
 
 const Conversation: React.FC = () => {
   const { chats, setChats, setIsLoading } = useContext(ChatContext)
+  console.log(chats)
 
   async function submitMessage(event: any){
     event.preventDefault()
@@ -53,7 +54,7 @@ const Conversation: React.FC = () => {
 
           <main className="h-[90vh] w-[90%] absolute bottom-2 pt-5 lg:w-[950px] lg:bottom-5">
           {/* Conversation */}
-          {chats?.length != 0 ? <ActiveConversation chats={chats} /> : <NewConversation />}
+          {chats?.length > 1 ? <ActiveConversation chats={chats} /> : <NewConversation />}
 
           {/* Input Form */}
             <form action="" className="w-full" onSubmit={submitMessage}>
