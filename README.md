@@ -1,1 +1,1 @@
-Neobot - AI Personal Chat Assistant
+Neobot - AI Personal Chat Assistant.
