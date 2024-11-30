@@ -6,14 +6,8 @@ import { ChatProvider } from './context/Chat'
 import './index.css'
 
 const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Home />
-  },
-  {
-    path: '/conversation',
-    element: <Conversation />
-  },
+  { path: '/', element: <Home /> },
+  { path: '/conversation', element: <Conversation /> },
 ])
 
 createRoot(document.getElementById('root')!).render(
