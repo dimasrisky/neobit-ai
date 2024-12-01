@@ -4,4 +4,7 @@ import NewConversation from "./NewConversation"
 import BubbleChatLoading from "./loader/BubbleChatLoading"
 import BubbleChat from "./BubbleChat"
 
-export { ExamplePrompt, ActiveConversation, NewConversation, BubbleChatLoading, BubbleChat }
+// Landing Components
+import Navbar from "./Navbar"
+
+export { ExamplePrompt, ActiveConversation, NewConversation, BubbleChatLoading, BubbleChat, Navbar }
