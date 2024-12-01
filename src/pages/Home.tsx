@@ -1,11 +1,12 @@
 import React from 'react'
-import { Navbar } from '../components/Components'
+import { Navbar, Hero } from '../components/Components'
 
 const Home: React.FC = () => {
   return (
     <>
-    <div className=''>
+    <div className='mx-auto w-[85%] xl:w-[1180px]'>
       <Navbar />
+      <Hero />
     </div>
     </>
   )

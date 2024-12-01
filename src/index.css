@@ -12,6 +12,13 @@
     src: url('./assets/fonts/lexend/Lexend-VariableFont_wght.ttf');
 }
 
+.text-hero-gradient{
+  background: linear-gradient(to right, #D0D2E3, #6F7498);
+  -webkit-background-clip: text; 
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 body{
     font-family: 'Inter', sans-serif;
 }
