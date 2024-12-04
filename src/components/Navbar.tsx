@@ -6,7 +6,7 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className="w-[90%] fixed top-0 left-0 right-0 z-50 backdrop-blur-lg border-b border-primary-white border-opacity-40 mx-auto xl:w-[1180px]">
+    <nav className="w-full px-5 fixed top-0 left-0 right-0 z-50 backdrop-blur-lg border-b border-primary-white border-opacity-40 mx-auto sm:w-[90%] sm:px-2 xl:w-[1180px]">
       <div className="w-full mx-auto py-[7px]">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center space-x-2">
