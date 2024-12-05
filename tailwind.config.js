@@ -17,12 +17,17 @@ export default {
         'primary-blue': '#244DCB'
       },
       animation: {
-        bubble: 'bubble 1s infinite ease-in-out',
+        'scale-up': 'scale-up 1s linear infinite',
       },
       keyframes: {
-        bubble: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-10px)' },
+        'scale-up': {
+          '20%': {
+            transform: 'scaleY(1.5)',
+            backgroundColor: '#D0D2E3',
+          },
+          '40%': {
+            transform: 'scaleY(1)',
+          },
         },
       },
     },
