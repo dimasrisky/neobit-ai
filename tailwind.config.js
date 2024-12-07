@@ -11,18 +11,23 @@ export default {
         'lexend': ['Lexend', 'sans-serif']
       },
       colors: {
-        'primary-white': '#AFADAD',
-        'primary-black': '#1E1F20',
-        'secondary-black': '#282A2C',
+        'primary-white': '#D0D2E3',
+        'primary-black': '#0B0C11',
+        'secondary-black': '#161820',
         'primary-blue': '#244DCB'
       },
       animation: {
-        bubble: 'bubble 1s infinite ease-in-out',
+        'scale-up': 'scale-up 1s linear infinite',
       },
       keyframes: {
-        bubble: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-10px)' },
+        'scale-up': {
+          '20%': {
+            transform: 'scaleY(1.5)',
+            backgroundColor: '#D0D2E3',
+          },
+          '40%': {
+            transform: 'scaleY(1)',
+          },
         },
       },
     },
