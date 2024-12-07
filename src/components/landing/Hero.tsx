@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 const Hero: React.FC = () => {
   return (
     <>
-    <section id="home">
+    <section id="home" className='scroll-mt-48'>
       <div className="w-[220px] h-[220px] rounded-full absolute left-1/2 -top-[200px] -translate-x-1/2 blur-[200px] bg-primary-white"></div>
       <section className="mt-[130px] w-full">
         <div className="flex flex-col items-center text-center gap-[16px]">

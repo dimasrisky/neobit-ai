@@ -3,7 +3,7 @@ import heroImage from '../../assets/img/about-image.webp'
 
 const About: React.FC = () => {
   return (
-    <section id='about'>
+    <section id='about' className='scroll-mt-48'>
         <div className='w-full mx-auto flex flex-col items-start mt-[100px] md:flex-row md:justify-center md:items-center md:gap-5 lg:gap-10 lg:mt-[159px]'>
             <img src={heroImage} alt="about-image" className='w-full scale-110 md:w-[350px] lg:w-[500px]'/>
             <div className='text-primary-white'>

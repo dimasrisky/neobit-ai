@@ -17,7 +17,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ type, title, description }) =
 
 const Feature: React.FC = () => {
   return (
-    <section id='feature'>
+    <section id='feature' className='scroll-mt-48'>
         <div className='mt-[100px] lg:mt-[159px]'>
             <h1 className='text-primary-white font-lexend font-semibold text-[22px] text-center mb-[50px] lg:mb-[57px] lg:text-[30px]'>Why Choose Neobot?</h1>
             <div className='flex flex-col gap-[25px] sm:flex-row sm:justify-between'>

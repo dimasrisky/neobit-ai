@@ -14,10 +14,10 @@ const Navbar: React.FC = () => {
             <span className="font-semibold text-white">NeoBot.ai</span>
           </Link>
           <div className='gap-[45px] items-center hidden lg:flex'>
-            <Link to="/" className="text-[16px] text-white transition-colors">Home</Link>
-            <Link to="/about" className="text-[16px] text-white transition-colors">About</Link>
-            <Link to="/features" className="text-[16px] text-white transition-colors">Features</Link>
-          </div>
+            <a href="#home" className="text-[16px] text-white transition-colors">Home</a>
+            <a href="#about" className="text-[16px] text-white transition-colors">About</a>
+            <a href="#feature" className="text-[16px] text-white transition-colors">Features</a>
+         </div>
           <Link to={'/conversation'} className="px-[27px] py-[8px] text-sm font-medium text-primary-black bg-primary-white rounded-full hidden lg:flex hover:shadow-lg hover:shadow-primary-white/10 hover:scale-105 transition-all duration-300">Get Started</Link>
           
           <button
@@ -36,10 +36,10 @@ const Navbar: React.FC = () => {
       {/* Mobile menu */}
       <div onClick={() => setIsOpen((prev: boolean) => !prev)} className={`${isOpen ? 'opacity-100 translate-x-0' : 'translate-x-full opacity-0'} py-6 lg:hidden fixed top-16 right-0 w-64 bg-primary-black shadow-lg rounded-2xl shadow-primary-white/10 transition-all duration-300 ease-in-out`}>
         <div className="px-4 flex flex-col space-y-5">
-            <Link to="/"className="px-3 py-2 text-base hover:bg-gray-700 text-white rounded-md transition-colors">Home</Link>
-            <Link to="/about" className="px-3 py-2 text-base hover:bg-gray-700 text-white rounded-md transition-colors">About</Link>
-            <Link to="/features" className="px-3 py-2 text-base hover:bg-gray-700 text-white rounded-md transition-colors">Features</Link>
-            <button className="w-[80%] mx-auto py-2 text-base font-medium text-primary-black bg-primary-white rounded-full hover:shadow-lg hover:shadow-primary-white/10 hover:scale-105">Get Started</button>
+            <a href="#home"className="px-3 py-2 text-base hover:bg-gray-700 text-white rounded-md transition-colors">Home</a>
+            <a href="#about" className="px-3 py-2 text-base hover:bg-gray-700 text-white rounded-md transition-colors">About</a>
+            <a href="#feature" className="px-3 py-2 text-base hover:bg-gray-700 text-white rounded-md transition-colors">Features</a>
+            <Link to={'/conversation'} className="w-[80%] mx-auto text-center py-2 text-base font-medium text-primary-black bg-primary-white rounded-full hover:shadow-lg hover:shadow-primary-white/10 hover:scale-105">Get Started</Link>
         </div>
       </div>
     </nav>
