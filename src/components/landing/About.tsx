@@ -10,7 +10,7 @@ const About: React.FC = () => {
                 <h1 className='font-lexend font-semibold text-[23px] sm:text-[28px] md:text-[18px] lg:text-[28px]'>What is Neobot Ai?</h1>
                 <p className='font-inter text-[11px] leading-[190%] mt-[19px] mb-[39px] sm:text-[13px] md:text-[9px] lg:text-[14px] lg:max-w-[490px]'>Neobot is an advanced AI assistant powered by Qwen2.5-Coder model. With this technology, NeoBot can understand and respond to your words quickly and accurately.</p>
                 <button className="bg-primary-white py-[7px] px-[28px] rounded-full outline-none transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-primary-white/20 md:py-[5px] md:px-[25px] lg:py-[7px] lg:px-[28px]">
-                    <a href="#" className="text-secondary-black text-[12px] font-semibold">View Model</a>
+                    <a href="https://huggingface.co/Qwen/Qwen2.5-Coder-32B-Instruct" target='_blank' className="text-secondary-black text-[12px] font-semibold">View Model</a>
                 </button>
             </div>
         </div>
