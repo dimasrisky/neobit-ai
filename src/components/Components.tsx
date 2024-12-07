@@ -10,5 +10,6 @@ import Hero from "./landing/Hero"
 import About from "./landing/About"
 import Feature from "./landing/Feature"
 import CallToAction from "./landing/CallToAction"
+import Footer from "./landing/Footer"
 
-export { ExamplePrompt, ActiveConversation, NewConversation, BubbleChatLoading, BubbleChat, Navbar, Hero, About, Feature, CallToAction }
+export { ExamplePrompt, ActiveConversation, NewConversation, BubbleChatLoading, BubbleChat, Navbar, Hero, About, Feature, CallToAction, Footer }
