@@ -8,7 +8,7 @@ const BubbleChatLoading: React.FC = () => {
         <span className="bar w-[3px] h-[30px] bg-primary-white/50 rounded-lg mx-[5px] animate-[scale-up_2s_linear_infinite]"></span>
         <span className="bar w-[3px] h-[15px] bg-primary-white/50 rounded-lg animate-[scale-up_3s_linear_infinite]"></span>
       </div>
-      <h5 className='text-primary-white text-[16px]'>Neobot is thinking...</h5>
+      <h5 className='text-primary-white text-[13px] md:text-[16px]'>Neobot is thinking...</h5>
     </div>
   )
 }
