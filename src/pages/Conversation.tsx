@@ -8,7 +8,6 @@ const inference = new HfInference(import.meta.env.VITE_HF_ACCESS_TOKEN)
 
 const Conversation: React.FC = () => {
   const { chats, setChats, isLoading, setIsLoading } = useContext(ChatContext)
-  console.log(chats)
 
   async function submitMessage(event: any){
     event.preventDefault()
@@ -59,7 +58,7 @@ const Conversation: React.FC = () => {
           {/* Input Form */}
             <form action="" className="w-full" onSubmit={submitMessage}>
               <div className="flex px-[22px] mx-auto py-[12px] items-center justify-between w-full text-[12px] text-white bg-secondary-black rounded-full shadow-sm outline-none lg:text-[16px] lg:px-[28px]">
-                <input type="text" name="inputMessage" autoFocus placeholder="Ketik sesuatu..." className={`outline-none w-[85%] bg-secondary-black h-[100%] ${isLoading && 'cursor-not-allowed'}`} disabled={isLoading}/>
+                <input type="text" name="inputMessage" required autoComplete="off" autoFocus placeholder="Ketik sesuatu..." className={`outline-none w-[85%] bg-secondary-black h-[100%] ${isLoading && 'cursor-not-allowed'}`} disabled={isLoading}/>
                 <div className="flex items-center gap-[12px]">
                   <button type="submit"><Send style="w-[20px] lg:w-[30px]"/></button>
                 </div>
