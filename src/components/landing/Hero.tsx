@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
         <p className="text-[11px] font-normal text-center leading-[200%] text-primary-white sm:text-[14px] lg:text-[16px] md:max-w-[518px] lg:max-w-[718px]">Powered by Qwen2.5-Coder, Neobot is not only smart, it also understands your needs. From small talk to helping you with daily tasks</p>
         <div className="flex items-center gap-4 mt-[16px] lg:mt-[32px]">
             <Link to={'/conversation'} className="text-primary-white border font-medium text-[13px] py-[10px] px-[32px] border-primary-white rounded-full lg:text-[16px] lg:px-[51px] lg:py-[16px] transition-all duration-300 ease-in-out hover:bg-primary-white hover:text-primary-black hover:shadow-lg hover:shadow-primary-white/20 hover:scale-105">Get Started</Link>
-            <a href='https://github.com/dimasrisky/neobot-ai' className="text-primary-black bg-primary-white border font-medium text-[13px] py-[10px] px-[32px] rounded-full lg:text-[16px] lg:px-[51px] lg:py-[16px] transition-all duration-300 ease-in-out hover:border-primary-black hover:shadow-lg hover:shadow-primary-black/10 hover:scale-105">View Github</a>
+            <a href='https://github.com/dimasrisky/neobot-ai' target="_blank" className="text-primary-black bg-primary-white border font-medium text-[13px] py-[10px] px-[32px] rounded-full lg:text-[16px] lg:px-[51px] lg:py-[16px] transition-all duration-300 ease-in-out hover:border-primary-black hover:shadow-lg hover:shadow-primary-black/10 hover:scale-105">View Github</a>
         </div>
       </div>
     </section>
