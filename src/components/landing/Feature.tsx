@@ -8,7 +8,7 @@ type FeatureCardProps = {
 
 const FeatureCard: React.FC<FeatureCardProps> = ({ type, title, description }) => {
     return(
-        <div className={`w-full flex flex-col justify-center gap-[22px] ${type === 'primary' ? 'bg-primary-white shadow-lg shadow-primary-white border border-primary-white' : 'bg-transparent text-primary-white'} text-primary-black px-[33px] py-[34px] rounded-[11px] sm:w-[348px] lg:py-[28px] lg:w-[400px]`}>
+        <div className={`w-full flex flex-col justify-center gap-[22px] ${type === 'primary' ? 'bg-primary-white shadow-[0px_4px_40px_0px_rgba(208,210,227,0.3)] border border-primary-white' : 'bg-transparent text-primary-white'} text-primary-black px-[33px] py-[34px] rounded-[11px] sm:w-[348px] lg:py-[28px] lg:w-[400px]`}>
             <h3 className='font-semibold text-[16px] lg:text-[19px]'>{title}</h3>
             <p className='text-[11px] leading-[179%]'>{description}</p>
         </div>
