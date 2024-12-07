@@ -1,11 +1,11 @@
 import React from 'react'
-import heroImage from '../../assets/img/about-image.webp'
+import aboutImage from '../../assets/img/about-image.webp'
 
 const About: React.FC = () => {
   return (
     <section id='about' className='scroll-mt-48'>
         <div className='w-full mx-auto flex flex-col items-start mt-[100px] md:flex-row md:justify-center md:items-center md:gap-5 lg:gap-10 lg:mt-[159px]'>
-            <img src={heroImage} alt="about-image" className='w-full scale-110 md:w-[350px] lg:w-[500px]'/>
+            <img src={aboutImage} alt="about-image" className='w-full scale-110 md:w-[350px] lg:w-[500px]'/>
             <div className='text-primary-white'>
                 <h1 className='font-lexend font-semibold text-[23px] sm:text-[28px] md:text-[18px] lg:text-[28px]'>What is Neobot Ai?</h1>
                 <p className='font-inter text-[11px] leading-[190%] mt-[19px] mb-[39px] sm:text-[13px] md:text-[9px] lg:text-[14px] lg:max-w-[490px]'>Neobot is an advanced AI assistant powered by Qwen2.5-Coder model. With this technology, NeoBot can understand and respond to your words quickly and accurately.</p>

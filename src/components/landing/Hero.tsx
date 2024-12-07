@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import heroImage from '../../assets/img/hero-image.webp'
 
 const Hero: React.FC = () => {
   return (
@@ -18,7 +19,7 @@ const Hero: React.FC = () => {
 
       {/* Preview */}
       <section className="mt-[77px] overflow-hidden">
-          <img src="./src/assets/img/hero-image.webp" alt="Desktop Preview" className="object-cover w-full lg:w-[90%] mx-auto" />
+          <img src={heroImage} alt="Desktop Preview" className="object-cover w-full lg:w-[90%] mx-auto" />
       </section>
     </section>
     </>
