@@ -14,6 +14,7 @@
     "dotenv": "^16.4.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-hook-speech-to-text": "^0.8.0",
     "react-markdown": "^9.0.1",
     "react-router-dom": "^7.0.1",
     "rehype-highlight": "^7.0.1",
