@@ -1,6 +1,6 @@
-import React, { useContext } from "react"
+import React, { useContext, useState } from "react"
 import { LogoDark, Send } from "../assets/Assets"
-import { ActiveConversation, NewConversation } from '../components/Components'
+import { ActiveConversation, Microphone, NewConversation } from '../components/Components'
 import { HfInference } from "@huggingface/inference"
 import { ChatContext } from "../context/Chat"
 
@@ -8,14 +8,12 @@ const inference = new HfInference(import.meta.env.VITE_HF_ACCESS_TOKEN)
 
 const Conversation: React.FC = () => {
   const { chats, setChats, isLoading, setIsLoading } = useContext(ChatContext)
+  const [ inputMessage, setInputMessage ] = useState<string>('')
 
-  async function submitMessage(event: any){
-    event.preventDefault()
-    const formData = new FormData(event.currentTarget)
-    event.target.reset()
-    const message = formData.get('inputMessage')
-    if(typeof message != 'string') {
-      alert('input invalid')
+  async function submitMessage(message: string){
+    setInputMessage('')
+    if(!message) {
+      alert('please fill the input')
       return
     }
     setChats((prev: any) => [...prev, { role: "user", content: message }])
@@ -56,10 +54,16 @@ const Conversation: React.FC = () => {
           {chats?.length > 1 ? <ActiveConversation chats={chats} /> : <NewConversation />}
 
           {/* Input Form */}
-            <form action="" className="w-full" onSubmit={submitMessage}>
+            <form action="" className="w-full" onSubmit={(event: any) => {
+              event.preventDefault()
+              submitMessage(inputMessage)
+            }}>
               <div className="flex px-[22px] mx-auto py-[12px] items-center justify-between w-full text-[12px] text-white bg-secondary-black rounded-full shadow-sm outline-none lg:text-[16px] lg:px-[28px]">
-                <input type="text" name="inputMessage" required autoComplete="off" autoFocus placeholder="Ketik sesuatu..." className={`outline-none w-[85%] bg-secondary-black h-[100%] ${isLoading && 'cursor-not-allowed'}`} disabled={isLoading}/>
+                <input type="text" name="inputMessage" onChange={event => setInputMessage(event.target.value)} value={inputMessage} required autoComplete="off" autoFocus placeholder="Ketik sesuatu..." className={`outline-none w-[85%] bg-secondary-black h-[100%] ${isLoading && 'cursor-not-allowed'}`} disabled={isLoading}/>
                 <div className="flex items-center gap-[12px]">
+                  <div>
+                    <Microphone setInputMessage={setInputMessage} submitMessage={submitMessage} />
+                  </div>
                   <button className="p-2 rounded-full transition-colors duration-300 hover:bg-gray-500/30" type="submit"><Send style="w-[20px] lg:w-[25px]"/></button>
                 </div>
               </div>
