@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Google, Facebook } from '../assets/Assets'
 
-const Login = () => {
+const Login: React.FC = () => {
   return (
     <div className='w-[90%] h-screen mx-auto flex justify-center items-center'>
         <div className='w-[438px] flex flex-col text-white'>
