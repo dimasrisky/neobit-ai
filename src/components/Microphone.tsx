@@ -51,9 +51,9 @@ const Microphone: React.FC<MicrophoneProps> = ({ setInputMessage, submitMessage 
     }
     useEffect(() => {
         (async () => {
-            let outputMessage = ''
+            let outputMessage: string = ''
             if(results && isRecording){
-                results.map(result => {
+                results.map((result: any) => {
                     outputMessage += result.transcript
                 })
                 if(outputMessage === '') return
