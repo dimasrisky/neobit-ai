@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Google, Facebook } from '../assets/Assets'
 import { createUserWithEmailAndPassword, signInWithPopup } from 'firebase/auth'
 import { auth, facebookProvider, googleProvider } from '../config/firebase'
@@ -9,6 +9,7 @@ const Register: React.FC = () => {
     const [ isLoadingEmailAuth, setIsLoadingEmailAuth ] = useState<boolean>(false)
     const [ isLoadingGoogleAuth, setIsLoadingGoogleAuth ] = useState<boolean>(false)
     const [ isLoadingFacebookAuth, setIsLoadingFacebookAuth ] = useState<boolean>(false)
+    const navigate = useNavigate()
     const submitForm = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
         setIsLoadingEmailAuth(true)
@@ -20,6 +21,7 @@ const Register: React.FC = () => {
             console.log(signIn.user)
             alert('Success Register')
             setIsLoadingEmailAuth(false)
+            navigate('/c/12345')
         }catch(err: any){
             alert(err.message)
             setIsLoadingEmailAuth(false)
@@ -31,9 +33,10 @@ const Register: React.FC = () => {
         try{
             await signInWithPopup(auth, googleProvider)
             setIsLoadingGoogleAuth(false)
+            navigate('/c/12345')
         }catch(error: any){
             if(error.message != 'Firebase: Error (auth/popup-closed-by-user).') alert(error.message)
-            setIsLoadingGoogleAuth(false)
+                setIsLoadingGoogleAuth(false)
         }
     }
 
@@ -42,6 +45,7 @@ const Register: React.FC = () => {
         try{
             await signInWithPopup(auth, facebookProvider)
             setIsLoadingFacebookAuth(false)
+            navigate('/c/12345')
         }catch(error: any){
             if(error.message != 'Firebase: Error (auth/popup-closed-by-user).') alert(error.message)
             setIsLoadingFacebookAuth(false)
