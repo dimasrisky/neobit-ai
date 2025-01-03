@@ -13,7 +13,7 @@ const router = createBrowserRouter([
   { path: '/login', element: <Login /> },
   { 
     path: '/c/:chatId', 
-    element: <IsLoggedIn />,
+    element: '',
     children: [
       { 
         index: true,
