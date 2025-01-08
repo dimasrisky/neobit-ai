@@ -3,13 +3,11 @@ import { LogoDark, Send, Plus } from "../assets/Assets"
 import { ActiveConversation, Microphone, NewConversation } from '../components/Components'
 import { HfInference } from "@huggingface/inference"
 import { ChatContext } from "../context/Chat"
-import { useParams } from "react-router-dom"
 
 const inference = new HfInference(import.meta.env.VITE_HF_ACCESS_TOKEN)
 
-const LoggedInConversation: React.FC = () => {
+const LoggedInNewConversation: React.FC = () => {
   const { chats, setChats, isLoading, setIsLoading } = useContext(ChatContext)
-  const { chatId } = useParams()
   const [ inputMessage, setInputMessage ] = useState<string>('')
 
   async function submitMessage(message: string){
@@ -89,4 +87,4 @@ const LoggedInConversation: React.FC = () => {
   )
 }
 
-export default LoggedInConversation
+export default LoggedInNewConversation

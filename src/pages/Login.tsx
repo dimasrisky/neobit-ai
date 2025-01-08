@@ -16,11 +16,10 @@ const Login: React.FC = () => {
         const email = formData.get("email") as string
         const password = formData.get("password") as string
         try{
-            const signIn = await signInWithEmailAndPassword(auth, email, password)
-            console.log(signIn.user)
+            await signInWithEmailAndPassword(auth, email, password)
             alert('Success Login')
             setIsLoadingEmailAuth(false)
-            navigate('/c/12345')
+            navigate('/c/new')
         }catch(err: any){
             alert(err.message)
             setIsLoadingEmailAuth(false)
@@ -32,7 +31,7 @@ const Login: React.FC = () => {
         try{
             await signInWithPopup(auth, googleProvider)
             setIsLoadingGoogleAuth(false)
-            navigate('/c/12345')
+            navigate('/c/new')
         }catch(error: any){
             if(error.message != 'Firebase: Error (auth/popup-closed-by-user).') alert(error.message)
             setIsLoadingGoogleAuth(false)
@@ -44,7 +43,7 @@ const Login: React.FC = () => {
         try{
             await signInWithPopup(auth, facebookProvider)
             setIsLoadingFacebookAuth(false)
-            navigate('/c/12345')
+            navigate('/c/new')
         }catch(error: any){
             if(error.message != 'Firebase: Error (auth/popup-closed-by-user).') alert(error.message)
             setIsLoadingFacebookAuth(false)
