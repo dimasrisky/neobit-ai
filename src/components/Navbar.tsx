@@ -18,7 +18,7 @@ const Navbar: React.FC = () => {
             <a href="#about" className="text-[16px] text-white transition-colors">About</a>
             <a href="#feature" className="text-[16px] text-white transition-colors">Features</a>
          </div>
-          <Link to={'/conversation'} className="px-[27px] py-[8px] text-sm font-medium text-primary-black bg-primary-white rounded-full hidden lg:flex hover:shadow-lg hover:shadow-primary-white/10 hover:scale-105 transition-all duration-300">Get Started</Link>
+          <Link to={'/login'} className="px-[27px] py-[8px] text-sm font-medium text-primary-black bg-primary-white rounded-full hidden lg:flex hover:shadow-lg hover:shadow-primary-white/10 hover:scale-105 transition-all duration-300">Sign In</Link>
           
           <button
             onClick={() => setIsOpen((prev: any) => !prev)} className="lg:hidden p-2 outline-none rounded-md text-gray-400 hover:text-white hover:bg-gray-700"aria-expanded={isOpen}aria-label="Toggle menu">
